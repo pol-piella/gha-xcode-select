@@ -2,17 +2,14 @@ name: CI
 on: [push]
 
 jobs:
-  select-xcode-with-fastlane-xcversion:
+  select-xcode-with-fastlane:
     runs-on: macos-11
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Sets xcode version with fastlane xcversion
-        run: bundle exec fastlane ios xcversion_test
-  select-xcode-with-fastlane-xcode-select:
-    runs-on: macos-11
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Install the bundle
+        uses: bundle install
       - name: Sets xcode version with fastlane xcode-select
         run: bundle exec fastlane ios xcode_select_test
+      - name: Sets xcode version with fastlane xcversion
+        run: bundle exec fastlane ios xcversion_test
