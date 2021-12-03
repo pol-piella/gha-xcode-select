@@ -4,11 +4,11 @@ on: [push]
 jobs:
   select-xcode-with-fastlane-xcversion:
     runs-on: macos-11
-      steps:
-        - name: Sets xcode version with fastlane xcversion
+    steps:
+      - name: Sets xcode version with fastlane xcversion
         run: fastlane ios xcversion_test
   select-xcode-with-fastlane-xcode-select:
     runs-on: macos-11
-      steps:
-        - name: Sets xcode version with fastlane xcode-select
+    steps:
+      - name: Sets xcode version with fastlane xcode-select
         run: fastlane ios xcode_select_test
