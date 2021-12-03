@@ -14,4 +14,8 @@ platform :ios do
     xcode_select("/Applications/Xcode_13.2.app")
     run_tests
   end
+
+  lane :test do
+    run_tests
+  end
 end

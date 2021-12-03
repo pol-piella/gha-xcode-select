@@ -13,3 +13,14 @@ jobs:
         run: bundle exec fastlane ios xcode_select_test
       - name: Sets xcode version with fastlane xcversion
         run: bundle exec fastlane ios xcversion_test
+  select-xcode-with-env:
+    runs-on: macos-11
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_13.0.app/Contents/Developer
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install the bundle
+        run: bundle install
+      - name: Sets xcode version with fastlane xcode-select
+        run: bundle exec fastlane ios test

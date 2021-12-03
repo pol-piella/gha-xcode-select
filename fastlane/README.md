@@ -26,6 +26,11 @@ Selects the xcode version using the `xcversion` action and runs the tests
 fastlane ios xcode_select_test
 ```
 Selects the xcode version using the `xcversion` action and runs the tests
+### ios test
+```
+fastlane ios test
+```
+
 
 ----
 
