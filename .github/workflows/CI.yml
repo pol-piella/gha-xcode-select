@@ -1,0 +1,14 @@
+name: CI
+on: [push]
+
+jobs:
+  select-xcode-with-fastlane-xcversion:
+    runs-on: macos
+      steps:
+        - name: Sets xcode version with fastlane xcversion
+        run: fastlane ios xcversion_test
+  select-xcode-with-fastlane-xcode-select:
+    runs-on: macos
+      steps:
+        - name: Sets xcode version with fastlane xcode-select
+        run: fastlane ios xcode_select_test

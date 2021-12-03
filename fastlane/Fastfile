@@ -1,0 +1,17 @@
+default_platform(:ios)
+platform :ios do
+  # https://docs.fastlane.tools/actions/xcversion/
+  desc "Selects the xcode version using the `xcversion` action and runs the tests"
+  lane :xcversion_test do
+    xcversion(version: "~> 13.1.0")
+    run_tests
+  end
+
+  # https://docs.fastlane.tools/actions/xcode_select/
+  # https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11-Readme.md#xcode
+  desc "Selects the xcode version using the `xcversion` action and runs the tests"
+  lane :xcode_select_test do
+    xcode_select("/Applications/Xcode_13.2.app")
+    run_tests
+  end
+end
